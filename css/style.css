@@ -1,0 +1,95 @@
+body {
+   margin: 0;
+   font-size: 2vw;
+}
+.header {
+  background-color: #f1f1f1;
+  padding: 4vw;
+  text-align: center;
+
+}
+#coverPic{
+  height: 40vw;
+  width: 100%;
+  background: transparent;
+  position: relative;
+  z-index:-1;
+
+}
+#profilePic{
+  height: 20vw;
+  width: 20vw;
+  margin-top: -25vw;
+  margin-left: 5vw;
+  background: transparent;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-width: 1px;
+  border-color: #4A6AAA;
+  border-style: solid;}
+
+#navbar {
+  overflow: hidden;
+  background-color:#3B5998 ;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 4vw;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: white;
+  color: black;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+h4{
+  font-weight: bold;
+  font-size:3.4vw;
+}
+.table{
+  font-size:2vw;
+}
+@media screen and (min-width:768px){
+  .card{
+    margin-left: 25vw;
+  }
+  #navbar a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 2vw;
+    margin-left: 10vw;
+  }
+  h4{
+    font-weight: bold;
+    font-size:2vw;
+  }
+  .table{
+    font-size:1vw;
+  }
+  p{
+    font-size: 1vw;
+  }
+}
+#tokenButton:hover{
+
+    color:white;
+    background-color: grey;

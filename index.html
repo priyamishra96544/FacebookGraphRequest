@@ -1,0 +1,208 @@
+<html>
+<head>
+ <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="header">
+  <h2 style= "font-size:3vw;">Get your access token to see your Facebook profile!</h2>
+  <br/>
+  <a type="button" class="btn btn-primary btn-sm" href="https://developers.facebook.com/tools/explorer/145634995501895/" id="tokenButton" role= "button" style="background-color:#3B5998;font-size:1.4vw;color: white; border-color:#3B5998; ">
+
+            Get Facebook token
+  </a>
+  <br/><br>
+  <div class="col-sm-12 col-lg-12">
+           <div class="form-group">
+             <div class="input-group" >
+                <input type="text" placeholder="Enter your access token here" class="form-control" id="accessToken" style="font-size:1vw;">
+                  <span class="input-group-btn">
+                    <button id="input" class="btn btn-primary" type="button" style="background-color: #3B5998; font-size: 1vw;">Go »</button>
+                  </span>
+             </div>
+           </div>
+  </div>
+  </div>
+  <div class="text-center" id="loader" style="display: none;">
+    	<img src="images/loader.gif" alt="Loading">
+  </div> <!-- End of loader-->
+  <div id="coverContainer" style="padding:0; margin-top:0; display:none;">
+		<div> <img id="coverPic" alt="Default Cover Pic" src="images/default_cover.png"> </div>
+		<div class="text-left"> <img src="images/default_profile.jpg" alt="Default Profile Pic" id="profilePic"> </div>
+	</div>
+<div class="container-fluid" id="mainContainer" style="padding:0; display:none;">
+  <div id="navbar">
+    <a class="active" href="#basicInfo" id="basicInfo"> <i class="fa fa-user"></i></a>
+    <a href="#aboutInfo" id="aboutInfo"> <i class="fa fa-quote-left"></i> </a>
+    <a href="#eduInfo" id="eduInfo"> <i class="fa fa-graduation-cap"></i> </a>
+    <a href="#workInfo" id="workInfo"><i class="fa fa-suitcase"></i> </a>
+    <a href="#placeInfo" id="placeInfo"><i class="fa fa-globe"></i> </a>
+    <a href="#postsInfo " id="postsInfo"><i class="fa fa-photo"></i></a>
+  </div>
+  <br>
+  <div class="col-sm-9 col-md-9">
+		        <div class="card" id="basicInfoCard" style="text-align:center;">
+		        	<h4 > BASIC INFORMATION </h4>
+		        	<table class="table" >
+					   	<tbody>
+					      	<tr>
+					        	<td>Name </td>
+					        	<td><span class="boldSpan" id="name"></span></td>
+					      	</tr>
+					      	<tr>
+					        	<td>Birthday </td>
+					        	<td><span class="boldSpan" id="birthday"></span></td>
+					      	</tr>
+					      	<tr>
+					        	<td>Gender </td>
+					        	<td><span class="boldSpan" id="gender"></span> </td>
+					      	</tr>
+						 	<tr>
+					        	<td>Interested In </td>
+					        	<td><span class="boldSpan" id="interest"></span></td>
+					      	</tr>
+					      	 	<tr>
+					        	<td>Languages </td>
+					        	<td><span class="boldSpan" id="languages"></span></td>
+					      	</tr>
+					    </tbody>
+					</table>
+		        </div>
+
+            <div class="card" id="aboutCard" style="text-align:center;">
+		        	<h4 > ABOUT </h4>
+		        	<table class="table" >
+					   	<tbody>
+					      	<tr>
+					        	<td>Quotes </td>
+					        	<td><span class="boldSpan" id="qoutes"></span></td>
+					      	</tr>
+					      	<tr>
+					        	<td>Email Id</td>
+					        	<td><span class="boldSpan" id="email"></span></td>
+					      	</tr>
+					      	<tr>
+					        	<td>Friends </td>
+					        	<td><span class="boldSpan" id="friends"></span></td>
+					      	</tr>
+
+					    </tbody>
+					</table>
+		        </div>
+
+
+            <div class="card" id="educationCard" style="text-align:center;">
+		        	<h4> EDUCATION INFORMATION </h4>
+		        	<table class="table">
+					   	<tbody>
+					      	<tr>
+					        	<td><span id="education"></span></td>
+					      	</tr>
+					    </tbody>
+					</table>
+		        </div>
+
+		        <div class="card" id="workCard" style="text-align:center;">
+		        	<h4 > WORK INFORMATION </h4>
+		        	<table class="table">
+					   	<tbody>
+					      	<tr>
+					        	<td><span id="employer"></span></td>
+					      	</tr>
+					    </tbody>
+					</table>
+		        </div>
+
+            <div class="card" id="placesCard" style="text-align:center;">
+             <h4 > PLACES INFORMATION </h4>
+             <table class="table" >
+               <tbody>
+                 <tr>
+                   <td>Current City</td>
+                   <td><span class="boldSpan" id="currentCity"></span></td>
+                 </tr>
+                   <tr>
+                     <td>Hometown</td>
+                     <td><span class="boldSpan" id="hometown"></span></td>
+                   </tr>
+
+               </tbody>
+         </table>
+
+           </div>
+
+           <div class="card" id="postsCard" style="text-align:center;">
+		        	<h4> LATEST POSTS </h4>
+		        	<hr>
+		      		<p>
+					         Here is your latest posts:
+		        	</p>
+
+
+              <div class="col-lg-12 col-lg-offset-3 col-md-offset-3 col-md-12 col-sm-12">
+                                  <div class="feed1 animated fadeIn">
+                                      <a id="postStory1"></a>
+                                      <a class="photoDisplay1" style="width:3vw; height:3vw;"></a>
+                                  </div>
+                              </div>
+                              <!-- feed 1  -->
+                              <div class="col-lg-12 col-lg-offset-3 col-md-offset-3 col-md-12 col-sm-12">
+                                  <div class="feed2 wow fadeIn">
+                                      <a id="postStory2"></a>
+                                      <a class="photoDisplay2"></a>
+                                  </div>
+                              </div>
+                              <!-- feed 1  -->
+                              <div class="col-lg-12 col-lg-offset-3 col-md-offset-3 col-md-12 col-sm-12">
+                                  <div class="feed3 wow fadeIn">
+                                      <a id="postStory3"></a>
+                                      <a class="photoDisplay3"></a>
+                                  </div>
+                              </div>
+                              <!-- feed 1  -->
+                              <div class="col-lg-12 col-lg-offset-3 col-md-offset-3 col-md-12 col-sm-12">
+                                  <div class="feed4 wow fadeIn">
+                                      <a id="postStory4"></a>
+                                      <a class="photoDisplay4"></a>
+                                  </div>
+                              </div>
+                              <!-- feed 1  -->
+                              <div class="col-lg-12 col-lg-offset-3 col-md-offset-3 col-md-12 col-sm-12">
+                                  <div class="feed5 wow fadeIn">
+                                      <a id="postStory5"></a>
+                                      <a class="photoDisplay5"></a>
+                                  </div>
+                              </div>
+                              <!-- feed 1  -->
+                              <div class="col-lg-12 col-lg-offset-3 col-md-offset-3 col-md-12 col-sm-12">
+                                  <div class="feed6 wow fadeIn">
+                                      <a id="postStory6"></a>
+                                      <a class="photoDisplay6"></a>
+                                  </div>
+                              </div>
+
+
+                          <!-- end row -->
+
+
+
+
+
+		        </div>
+		    </div>
+		</div><!-- End Div column9-->
+
+    <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/app.js"></script>
+
+
+  </body>
+  </html>
